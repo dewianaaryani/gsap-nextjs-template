@@ -9,12 +9,6 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
 const ArtistCards = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLUListElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const proxyRef = useRef<HTMLDivElement>(null);
-
   useGSAP(() => {
     let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
 
@@ -234,7 +228,7 @@ const ArtistCards = () => {
           Next
         </button>
       </div>
-      <div className="drag-proxy invisible absolute" ref={proxyRef}></div>
+      <div className="drag-proxy invisible absolute"></div>
     </div>
   );
 };
